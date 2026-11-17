@@ -2,40 +2,88 @@
     margin: auto;
 }
 
+.top {
+  background-color: green;
+  border: 2px solid red;
+  border-radius: 25px;
+}
+
 .comp {
     display: flex;
     flex-direction: row;
-    background-color: gray;
+    background-color: blue;
     width: 80%;
     justify-content: center;
     gap: 10%;
     padding-top: 10px;
     flex-wrap: wrap;
-    row-gap: 6rem;
+
 }
 
-    .comp .item {
-        background-color: #f1f1f1;
+    .comp .empty {
+      background-color: yellow;
+    }
+
+      .comp .empty .socket {
+          background-color: black;
+      }
+
+      .comp .empty .spacer {
+            min-height: 2.5em;          /* room for 2 lines; adjust to taste */
+            display: flex;
+            align-items: center;        /* keeps 1-line names vertically centered in that space */
+            justify-content: center;
+            margin: 0.5rem 0;
+      }
+
+      .comp .empty p {
+        color: #ffffff;
+      }
+
+    .comp .item,
+    .comp .empty {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
         margin: 10px;
-        width: 5rem;
-        height: 5rem;
+        border-radius: 15px;
+        width: 8rem;
+        height: 10rem;
+    }
+      .comp .item img,
+      .comp .empty .socket {
+            border-radius: 15px;
+            flex-shrink: 0;
+            width: 5rem;
+            height: 5rem;
+      }
+
+    .comp .item {
+      background-color: purple;
     }
 
         .comp .item img {
-            width: 100%;
-            height: 100%;
+            background-color: #f1f1f1;
             object-fit: cover;
         }
 
-    .comp .label {
-        text-align: center;
-        font-size: 18px;
-    }
-
-        .comp .label p {
+        .comp .item p,
+        .comp .empty p {
+            text-align: center;
             font-size: 14px;
             font-weight: bold;
         }
+
+        .comp .item p:first-child,
+        .comp .empty p:first-child {
+            min-height: 2.5em;          /* room for 2 lines; adjust to taste */
+            display: flex;
+            align-items: center;        /* keeps 1-line names vertically centered in that space */
+            justify-content: center;
+            margin: 0.5rem 0;
+        }
+
 
 .total {
     display: flex;
@@ -50,18 +98,32 @@
     font-weight: bold;
     color: white;
 }
+  .total .good,
+  .total .bad {
+      border-radius: 25px;
+      width: 10rem;
+      height: 4rem;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
 
 .weapons {
     display: flex;
     flex-direction: row;
     background-color: gray;
-    width: 100%;
+    width: 95%;
     gap: 20px;
     flex-wrap: wrap;
+    border: 2px solid red;
+    border-radius: 25px;
+    justify-content: center;
 }
 
     .weapons div {
-        background-color: #f1f1f1;
+        background-color: red;
+        border-radius: 15px;
         margin: 10px;
         font-size: 24px;
         width: 3rem;
@@ -78,15 +140,72 @@
     height: 20%;
     width: 80%;
 }
+    .space input {
+      display: none;
+    }
+    
+    .space label {
+        /* position: relative; */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        text-align: center;
+        padding-left: 1rem;
+        background: lightgray;
+        color: black;
+        height: 4rem; /* This height value must be equal to max-height value of <details> element  */
+        border: 2px solid red;
+        border-radius: 25px;
+    }
+
+    .space label:hover {
+        cursor: pointer;
+    }
+
+    label::before {
+        content: "⏵";
+        font-size: 1.0rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        margin-right: 1rem;
+        transition: rotate 200ms 400ms ease-out;
+    }
+
+    input:checked + details label::before {
+        rotate: 90deg;
+        transition: rotate 200ms ease-out;
+    }
 
 summary {
+    display: block;
     font-size: 24px;
     font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
-    background-color: #f1f1f1;
-    border: none;
-    outline: none;
-    width: 100%;
-    text-align: left;
+    /* cursor: pointer; */
+    /* padding: 10px; */
+    /* background-color: #f1f1f1; */
+    /* border: none; */
+    /* border: 2px solid red; */
+    /* border-radius: 25px; */
+    /* outline: none; */
+    /* width: 100%; */
+    /* text-align: left; */
 }
+
+details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-height: 4rem; /* Initial height */
+    overflow: hidden; /* Hide excess content */
+    transition: max-height 400ms ease-out; /* Animate height change */
+}
+
+input:checked + details,
+details:has(input:checked) {
+    max-height: 1300px; /* Set a max-height value enough to show all the content */
+}
+
+

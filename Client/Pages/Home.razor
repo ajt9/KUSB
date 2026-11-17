@@ -2,32 +2,40 @@
 
 <PageTitle>KUSB Calculator</PageTitle>
 
-<div class="comp">
-    @foreach (var weapon in CompList)
-    {
-        <div class="item">
-            <img src="@weapon.imgUrl" alt="@weapon.name" @onclick="() => removeFromComp(weapon)" />
-            <div class="label">
-                <p>@weapon.name</p>
-                <p>$@weapon.price</p>
+<div class="top">
+    <div class="comp">
+        @foreach (var weapon in CompList)
+        {
+            <div class="item">
+                  <p>@weapon.name</p>
+                  <img src="@weapon.imgUrl" alt="@weapon.name" @onclick="() => removeFromComp(weapon)" />
+                  <p>$@weapon.price</p>
             </div>
-        </div>
-    }
-    @for (int i = CompList.Count; i < 4; i++)
-    {
-        <div class="item"></div>
-    }
+        }
+        @for (int i = CompList.Count; i < 4; i++)
+        {
+            <div class="empty">
+                <p>__</p>
+                <div class="socket"></div>
+                <p>__</p>
+            </div>
+        }
 
-</div>
-<div class="total">
-    @if (getCompPrice() > 100)
-    {
-        <h1 style="color: red;"><u>$@getCompPrice()</u></h1>
-    }
-    else
-    {
-        <h1><u>$@getCompPrice()</u></h1>
-    }
+    </div>
+    <div class="total">
+        @if (getCompPrice() > 100)
+        {
+            <div class="bad">
+                <h1><u>$@getCompPrice()</u></h1>
+            </div>
+        }
+        else
+        {
+            <div class="good">
+                <h1><u>$@getCompPrice()</u></h1>
+            </div>
+        }
+    </div>
 </div>
 
 <div class="space">
@@ -38,8 +46,11 @@
 
     @for (int i = 50; i > 0; i -= 10)
     {
-        <details>
-            <summary>$@i</summary>
+        <input type="checkbox" id="@i" />
+        <details open>
+            <summary>
+              <label for="@i">$@i</label>
+            </summary>
             <div class="weapons">
                 @foreach (var weapon in WeaponList)
                 {
@@ -52,6 +63,8 @@
                 }
             </div>
         </details>
+
+        <br />
     }
 </div>
 
