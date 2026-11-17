@@ -3,29 +3,29 @@
 }
 
 .top {
-  background-color: green;
-  border: 2px solid red;
-  border-radius: 25px;
+  /* background-color: green; */
+  /* border: 2px solid red; */
+  /* border-radius: 25px; */
 }
 
 .comp {
     display: flex;
     flex-direction: row;
-    background-color: blue;
+    /* background-color: blue; */
     width: 80%;
     justify-content: center;
     gap: 10%;
     padding-top: 10px;
     flex-wrap: wrap;
-
 }
 
     .comp .empty {
-      background-color: yellow;
+      /* background-color: yellow; */
     }
 
       .comp .empty .socket {
           background-color: black;
+          border: 2px solid #212121;
       }
 
       .comp .empty .spacer {
@@ -37,7 +37,7 @@
       }
 
       .comp .empty p {
-        color: #ffffff;
+        color: #ffffff00;
       }
 
     .comp .item,
@@ -60,7 +60,8 @@
       }
 
     .comp .item {
-      background-color: purple;
+      background-color: #FFD41A99;
+      border: 2px solid #FFD41A
     }
 
         .comp .item img {
@@ -73,6 +74,10 @@
             text-align: center;
             font-size: 14px;
             font-weight: bold;
+        }
+
+        .comp .item p {
+          color: white;
         }
 
         .comp .item p:first-child,
@@ -88,7 +93,7 @@
 .total {
     display: flex;
     flex-direction: row;
-    background-color: gray;
+    /* background-color: gray; */
     width: 80%;
     height: 100px;
     justify-content: center;
@@ -103,26 +108,39 @@
       border-radius: 25px;
       width: 10rem;
       height: 4rem;
-      background-color: red;
+      /* background-color: red; */
       display: flex;
       justify-content: center;
       align-items: center;
   }
 
+  .total .good {
+    background-color: #1AFF4F66;
+    border: 2px solid #1AFF4F;
+    color: #51FF00;
+  }
+
+  .total .bad {
+    background-color: #FF636366;
+    border: 2px solid #FF6363;
+    color: #EF0000;
+  }
+
 .weapons {
     display: flex;
     flex-direction: row;
-    background-color: gray;
+    /* background-color: gray; */
+    background-color: #8F8F8F66;
     width: 95%;
     gap: 20px;
     flex-wrap: wrap;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     border-radius: 25px;
     justify-content: center;
 }
 
     .weapons div {
-        background-color: red;
+        background-color: #00000066;
         border-radius: 15px;
         margin: 10px;
         font-size: 24px;
@@ -152,10 +170,10 @@
         justify-content: start;
         text-align: center;
         padding-left: 1rem;
-        background: lightgray;
-        color: black;
+        background: #8F8F8F66;
+        color: white;
         height: 4rem; /* This height value must be equal to max-height value of <details> element  */
-        border: 2px solid red;
+        /* border: 2px solid red; */
         border-radius: 25px;
     }
 
@@ -182,15 +200,6 @@ summary {
     display: block;
     font-size: 24px;
     font-weight: bold;
-    /* cursor: pointer; */
-    /* padding: 10px; */
-    /* background-color: #f1f1f1; */
-    /* border: none; */
-    /* border: 2px solid red; */
-    /* border-radius: 25px; */
-    /* outline: none; */
-    /* width: 100%; */
-    /* text-align: left; */
 }
 
 details {
