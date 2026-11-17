@@ -214,7 +214,7 @@ details {
 
 input:checked + details,
 details:has(input:checked) {
-    max-height: 1300px; /* Set a max-height value enough to show all the content */
+    max-height: 1600px; /* Set a max-height value enough to show all the content */
 }
 
 
