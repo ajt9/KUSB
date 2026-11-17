@@ -14,7 +14,7 @@
     /* background-color: blue; */
     width: 80%;
     justify-content: center;
-    gap: 10%;
+    /* gap: 5%; */
     padding-top: 10px;
     flex-wrap: wrap;
 }
@@ -182,8 +182,8 @@
     }
 
     label::before {
-        content: "⏵";
-        font-size: 1.0rem;
+        content: ">";
+        font-size: 0.7rem;
         height: 4rem;
         display: flex;
         align-items: center;
